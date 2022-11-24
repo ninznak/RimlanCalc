@@ -9,9 +9,9 @@ desision = input("Введите арифметическое выражение
 
 romeDigits = {"": 0, "I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10}
 
-#xx = int(input("ВВЕДИ цифру до 1000: \n"))
 
-def converter(xx):
+
+def converter(xx):  # конвертирует большие цифры в римские до 1000
     if (xx > 0):
         if (xx > 0 and xx <= 10):
             returnRoman = romanSimple[xx - 1]
@@ -25,10 +25,7 @@ def converter(xx):
     return returnRoman
 
 
-#print(returnRoman)
-
-
-def processing(x):
+def processing(x):  # разделение на части и проверка на корректность лействий
 
     if "*" in x:
         x = x.split("*")
@@ -43,7 +40,7 @@ def processing(x):
     return x
 
 
-def argumentTypes(x, y):
+def argumentTypes(x, y):  # определение типа аргументов и их корректности справа и слева
     if (x in romanSimple) and (y in romanSimple):
         arg1 = romeDigits[x]
         arg2 = romeDigits[y]
@@ -56,7 +53,7 @@ def argumentTypes(x, y):
         raise Exception
 
 
-def resultA(x, y):
+def resultA(x, y):  # вычисление результата
 
     if "*" in desision:
         answer = x*y
@@ -73,6 +70,6 @@ def resultA(x, y):
 
 massiv = processing(desision)
 
-print(massiv)
+#print(massiv) // проверка что в массиве на выходе
 
-print(argumentTypes(massiv[0], massiv[1]))
+print(argumentTypes(massiv[0], massiv[1])) # печать результата
